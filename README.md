@@ -13,7 +13,7 @@ conda env create -f env.yaml
 Preprocess the data to collect the time of PTHrP and normal ranges of the lab tests for the following feature extraction. 
 Note: The data comes from Washington University School of Medicine in St. Louis (WUSM), Weill Cornell Medicine (WCM, New York) and University of Texas M.D. Anderson Cancer Center (MDA, Houston), which can not be public released. 
 The data of WUSM is from the AACC-2022 Competition: https://www.kaggle.com/competitions/aacc-2022-predicting-pthrp-results. It should be applied and used according to the data policy of the competition.
-The data files should be put into the directories accordingly. And the code to parse the information may need to be re-wrote according to the format of the data files.
+The data files should be put into the directories accordingly. And the code to parse the information may need to be re-wrote according to the format of the data files. It is assumed that the data files of each dataset is saved in ./wusm_data, ./wcm_data and ./mda_data respectively.
 ```
 python preprocess_data.py --dataset wusm --data_dir ./wusm_data
 python preprocess_data.py --dataset wcm --data_dir ./wcm_data
