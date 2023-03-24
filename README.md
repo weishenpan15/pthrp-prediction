@@ -32,19 +32,19 @@ python extract_features.py --dataset mda --data_dir ./mda_data --train_feature_s
 ## 3. Run the Experiments:
 Train model on WUSM and directly transport to in-cite test set, WCM and MDA
 ```
-python run_evaluation.py --train_dataset wusm --train_data_dir wusm_data --test_dataset wusm --test_data_dir ./wusm_data --test_mode 0
-python run_evaluation.py --train_dataset wusm --train_data_dir wusm_data --test_dataset wcm --test_data_dir ./wcm_data --test_mode 0
-python run_evaluation.py --train_dataset wusm --train_data_dir wusm_data --test_dataset mda --test_data_dir ./mda_data --test_mode 0
+python run_evaluation.py --train_dataset wusm --train_data_dir ./wusm_data --test_dataset wusm --test_data_dir ./wusm_data --test_mode 0
+python run_evaluation.py --train_dataset wusm --train_data_dir ./wusm_data --test_dataset wcm --test_data_dir ./wcm_data --test_mode 0
+python run_evaluation.py --train_dataset wusm --train_data_dir ./wusm_data --test_dataset mda --test_data_dir ./mda_data --test_mode 0
 ```
 
 Re-train models on WCM and MDA based on the features and hyperparameters on WUSM:
 ```
-python run_evaluation.py --train_dataset wusm --train_data_dir wusm_data --test_dataset wcm --test_data_dir ./wcm_data --test_mode 1
-python run_evaluation.py --train_dataset wusm --train_data_dir wusm_data --test_dataset mda --test_data_dir ./mda_data --test_mode 1
+python run_evaluation.py --train_dataset wusm --train_data_dir ./wusm_data --test_dataset wcm --test_data_dir ./wcm_data --test_mode 1
+python run_evaluation.py --train_dataset wusm --train_data_dir ./wusm_data --test_dataset mda --test_data_dir ./mda_data --test_mode 1
 ```
 Note: for re-building the model, the process should be repeated from Step 1 and change the training dataset.
 
 Train a model on WUSM and finetune it on WCM with a few samples (controlled by --sameple_size)
 ```
-python run_finetuning.py --train_dataset wusm --train_data_dir wusm_data --test_dataset wcm --test_data_dir ./wcm_data --sample_size 100
+python run_finetuning.py --train_dataset wusm --train_data_dir ./wusm_data --test_dataset wcm --test_data_dir ./wcm_data --sample_size 100
 ```
